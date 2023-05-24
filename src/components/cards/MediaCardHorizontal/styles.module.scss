@@ -1,0 +1,154 @@
+@import '../../../styles/config';
+
+
+
+@mixin defaultText {
+    color: $color-text-md;
+    font-size: 13px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.card {
+    padding: 8px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-white;
+    transition: all 0.3s linear;
+    box-shadow: 0 14px 30px rgba($color-box-shadow,.15),0 4px 4px rgba($color-box-shadow,.05);
+}
+
+
+.cardContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint(md) {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.coverImageContainer {
+    display: flex;
+    margin-right: 16px;
+}
+
+.coverImage {
+    width: 54px;
+    vertical-align: middle;
+
+    animation: opacity 0.3s linear;
+
+    @include breakpoint(md) {
+       width: 48px;
+    }
+}
+
+.titleGenresContainer {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-bottom: 8px;
+
+    @include breakpoint(md) {
+        flex: 5;
+        margin-bottom: 0;
+    }
+
+    .title {
+        color: $color-text-bold;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: $fs-sm;
+
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            color: $color-pr-5;
+        }
+    }
+    .genresContainer {
+        height: 20px;
+        overflow-y: hidden;
+    }
+    
+    .chip {
+        margin-right: 6px;
+    }
+}
+
+
+.infoContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(md) {
+        flex: 3;
+    }
+
+    .subInfoContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 8px;
+
+        @include breakpoint(md) {
+            flex: 1;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-right: 0;
+        }
+    }
+}
+
+
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+
+    .score {
+        margin-left: 4px;
+        @include defaultText();
+    }
+
+    @include breakpoint(md) {
+        flex: 1;
+        margin-right: 0;
+
+        .score {
+            font-size: $fs-md-sm;
+            font-weight: 600;
+        }
+    }
+}
+
+.textBold {
+    @include defaultText();
+    margin-right: 8px;
+
+    @include breakpoint(md) {
+        margin-bottom: 4px;
+        font-weight: 600;
+        margin-right: 0;
+    }
+    
+}
+
+.textLight {
+    @include defaultText();
+
+    @include breakpoint(md) {
+        color: $color-text-light;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    
+}
